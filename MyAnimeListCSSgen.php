@@ -1,12 +1,15 @@
 <?php
 /*credits: hanshenrik, NagisaDango, irc://irc.freenode.net/#anime */
 error_reporting(E_ALL);
-$scriptName='MyAnimeList PHP CSS generator.. version: 0.1-dev mtime(1360690400049)';
+$scriptName='MyAnimeList PHP CSS generator.. version: 0.1-dev mtime(1360692382770)';
 set_time_limit(120);
 ini_set('display_errors','On');
 ini_set('memory_limit','200M');//TODO: debug memory issues
 //in an animelist with 352 entries, peak memory usage was 32821776 bytes (~31 megabytes)
-$max_curl_multi_connections=20;//TODO: hardcoded max connections? 
+$max_curl_multi_connections=20;//TODO: hardcoded max connections?
+/*this could be done a lot nicer, more robust, and faster,
+if MyAnimeList.net could provide list, image, name,  about-page url, etc, via an API... 
+*hint to admins* :p */
 validate_env();
 function hhb_exception_handler($ex) {
 $outputAsHTML=true;
@@ -334,7 +337,7 @@ while ($active && $mrc == CURLM_OK) {
 }
 
 foreach($curls as $ch){
-  $html=curl_multi_getcontent($ch);
+	$html=curl_multi_getcontent($ch);
 	$url=curl_getinfo($ch,CURLINFO_EFFECTIVE_URL);
 	$val=grabImageUrlFromHTMLfunc($html,$url,$anime_or_manga);
 	$key=0;
