@@ -9,7 +9,9 @@ ini_set('memory_limit','200M');//TODO: debug memory issues
 $max_curl_multi_connections=20;//TODO: hardcoded max connections?
 /*this could be done a lot nicer, more robust, and faster,
 if MyAnimeList.net could provide list, image, name,  about-page url, etc, via an API... 
-*hint to admins* :p */
+*hint to admins* :p 
+if they did, i wouldn't even need PHP, just plain old HTML+Javascript+Ajax /XMLHttpRequest would suffice
+*/
 validate_env();
 function hhb_exception_handler($ex) {
 $outputAsHTML=true;
