@@ -1,5 +1,5 @@
 <?php
-/*credits: hanshenrik, NagisaDango, irc://irc.freenode.net/#anime */
+/* released under the WTFPL ( http://www.wtfpl.net/about/ )  */
 error_reporting(E_ALL);
 $scriptName='MyAnimeList PHP CSS generator.. version: 0.1-dev mtime(1360692382770)';
 set_time_limit(120);
